@@ -4,6 +4,7 @@ const define = document.getElementById('def')
 const phonetic = document.getElementById('phonetic')
 
 function getMeaning(){
+    try{
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input.value}`)
     .then(res => res.json())
     .then(data => {
@@ -16,6 +17,9 @@ function getMeaning(){
         define.innerText = def
         // console.log(data[0].phonetics[0].audio);
     })
+}catch(err) {
+    console.log(err);
+}
 }
 // console.log(speech);
 function playSpeech(){
@@ -29,8 +33,12 @@ function playSpeech(){
     })
 }
 
+function update(){
+    setTimeout(getMeaning, 1000)
+}
+
 // getMeaning()
-input.addEventListener('input', getMeaning)
+input.addEventListener('input', update)
 
 
 
