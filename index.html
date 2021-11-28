@@ -30,18 +30,33 @@
     <meta name="author" content="snowbit-coderboi">
 
 </head>
-<body>
+<body onload="wordOfTheDay()">
     <div class="container">
-        <h1 class="title text-center mt-4 text-uppercase fw-bolder">lexicon</h1>
-            <div class="word-container">
-                <input type="text" class="form-control" placeholder="Search a word" id="data">
-                <hr>
-                <h1 class="word" id="word"></h1>
-                <div class="phonetic">
-                    <i class="fas fa-volume-up" id="audioBtn" onclick="playSpeech()"></i>
-                    <p id="phonetic"></p>
+        <div class="word-container">
+                <h1 class="title text-center mt-2 text-uppercase fw-bolder">lexicon</h1><br>
+                <input type="text" class="form-control" placeholder="Search for a word" id="data">
+                <br>
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="word" id="word"></h1>
+                        <div class="phonetic">
+                            <i class="fas fa-volume-up" id="audioBtn" onclick="playSpeech()"></i>
+                            <p id="phonetic"></p>
+                        </div>
+                        <div id="def"></div>
+
+                    </div>
                 </div>
-                <div id="def"></div>
+                <br>
+                <hr>
+                <h3 class="sub-title">Word of the Day</h3>
+                <div class="word-of-day card">
+                    <div class="card-body">
+                        <h4 id="word_wod"></h4>
+                        <p id="phonetic_wod" class="mx-1"></p>
+                        <p id="def_wod"></p>
+                    </div>
+                </div>
             </div>
     </div>
     <script src="main.js"></script>
